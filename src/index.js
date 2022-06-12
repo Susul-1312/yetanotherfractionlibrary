@@ -95,6 +95,6 @@ export {
 	sub,
 	mul,
 	div,
-	fracToDec,
-	decToFrac,
+	toDecimal,
+	toFraction,
 }
