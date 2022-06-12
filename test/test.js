@@ -69,30 +69,30 @@ describe("div", function () {
 
 describe("toDecimal", function () {
     it('should convert 1/2 to 0.5', function () {
-        assert.equal(fracToDec("1/2"), "0.5");
+        assert.equal(toDecimal("1/2"), "0.5");
     })
     it('should convert -1/2 to -0.5', function () {
-        assert.equal(fracToDec("-1/2"), "-0.5");
+        assert.equal(toDecimal("-1/2"), "-0.5");
     })
     it('should convert 7/5 to 1.6', function () {
-        assert.equal(fracToDec("7/5"), "1.4");
+        assert.equal(toDecimal("7/5"), "1.4");
     })
     it('should convert -7/5 to -1.6', function () {
-        assert.equal(fracToDec("-7/5"), "-1.4");
+        assert.equal(toDecimal("-7/5"), "-1.4");
     })
 })
 
 describe("toFraction", function () {
     it('should convert 0.5 to 1/2', function () {
-        assert.equal(decToFrac("0.5"), "1/2");
+        assert.equal(toFraction("0.5"), "1/2");
     })
     it('should convert -0.5 to -1/2', function () {
-        assert.equal(decToFrac("-0.5"), "-1/2");
+        assert.equal(toFraction("-0.5"), "-1/2");
     })
     it('should convert 1.6 to 7/5', function () {
-        assert.equal(decToFrac("1.4"), "7/5");
+        assert.equal(toFraction("1.4"), "7/5");
     })
     it('should convert -1.6 to -7/5', function () {
-        assert.equal(decToFrac("-1.4"), "-7/5");
+        assert.equal(toFraction("-1.4"), "-7/5");
     })
 })
