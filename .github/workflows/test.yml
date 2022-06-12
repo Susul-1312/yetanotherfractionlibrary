@@ -1,0 +1,11 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm run build
+      - run: npm run test
