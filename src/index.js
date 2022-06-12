@@ -66,7 +66,7 @@ function fracToDec(frac) {
 }
 
 function decToFrac(x) {
-	num = parseFloat(x)
+	const num = parseFloat(x)
 
 	if (num == parseInt(num)) return reduce(num)
 
@@ -94,5 +94,7 @@ export {
 	add,
 	sub,
 	mul,
-	div
+	div,
+	fracToDec,
+	decToFrac,
 }

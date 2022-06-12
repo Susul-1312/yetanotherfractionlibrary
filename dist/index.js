@@ -75,7 +75,7 @@ function fracToDec(frac) {
 }
 
 function decToFrac(x) {
-	num = parseFloat(x);
+	var num = parseFloat(x);
 
 	if (num == parseInt(num)) return reduce(num);
 
@@ -108,3 +108,5 @@ exports.add = add;
 exports.sub = sub;
 exports.mul = mul;
 exports.div = div;
+exports.fracToDec = fracToDec;
+exports.decToFrac = decToFrac;
