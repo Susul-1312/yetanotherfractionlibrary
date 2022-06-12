@@ -68,13 +68,13 @@ function div(a, b) {
 	return mul(a, inv(b));
 }
 
-function fracToDec(frac) {
+function toDecimal(frac) {
 	var parts = reduce(frac).split("/");
 
 	return parts[0] / parts[1];
 }
 
-function decToFrac(x) {
+function toFraction(x) {
 	var num = parseFloat(x);
 
 	if (num == parseInt(num)) return reduce(num);
