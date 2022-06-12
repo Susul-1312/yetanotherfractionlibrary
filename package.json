@@ -9,7 +9,9 @@
   "files": [
     "index.js",
     "./dist/index.js",
-    "UNLICENSE"
+    "UNLICENSE",
+    "README.md",
+    "package.json"
   ],
   "scripts": {
     "test": "mocha",
