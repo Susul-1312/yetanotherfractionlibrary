@@ -1,8 +1,16 @@
 {
   "name": "yetanotherfractionlibrary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yet Another Fraction Library, stores fractions as actual integer division",
   "main": "index",
+  "engines": {
+    "node": "*"
+  },
+  "files": [
+    "index.js",
+    "./dist/index.js",
+    "UNLICENSE"
+  ],
   "scripts": {
     "test": "mocha",
     "build": "babel src -d dist"
