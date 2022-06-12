@@ -39,7 +39,7 @@ console.log(reduced) // 1/2
 reduced = reduce('2')
 console.log(reduced) // 2/1
 ```
-Fractions are automatically reduced by most operations.
+The fraction resulting from an operation is guaranteed to be reduced to its simplest form.
 
 To add two fractions, use the `add` function.
 ```js
