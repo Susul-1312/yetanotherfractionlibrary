@@ -108,5 +108,5 @@ exports.add = add;
 exports.sub = sub;
 exports.mul = mul;
 exports.div = div;
-exports.fracToDec = fracToDec;
-exports.decToFrac = decToFrac;
+exports.toDecimal = toDecimal;
+exports.toFraction = toFraction;
