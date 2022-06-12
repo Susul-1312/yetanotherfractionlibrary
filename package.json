@@ -8,7 +8,7 @@
   },
   "files": [
     "index.js",
-    "./dist/index.js",
+    "dist/index.js",
     "UNLICENSE",
     "README.md",
     "package.json"
