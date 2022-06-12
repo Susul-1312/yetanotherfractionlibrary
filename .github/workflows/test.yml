@@ -9,5 +9,5 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v3
-      - run: npm run build
-      - run: npm run test
+    - run: npm run build
+    - run: npm run test
