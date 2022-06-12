@@ -16,7 +16,7 @@ yafl has no production dependencies.
 
 To install yafl, run the following command:
 ```sh
-npm install yafl
+npm install --production yetanotherfractionlibrary
 ```
 
 ## Usage
