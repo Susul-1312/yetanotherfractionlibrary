@@ -1,5 +1,5 @@
 const assert = require('assert')
-const { reduce, add, sub, mul, div, fracToDec, decToFrac } = require('..')
+const { reduce, add, sub, mul, div, toDecimal, toFraction } = require('..')
 
 describe("reduce", function () {
     it('should reduce 3/6 to 1/2', function () {
@@ -67,7 +67,7 @@ describe("div", function () {
     })
 })
 
-describe("fracToDec", function () {
+describe("toDecimal", function () {
     it('should convert 1/2 to 0.5', function () {
         assert.equal(fracToDec("1/2"), "0.5");
     })
@@ -82,7 +82,7 @@ describe("fracToDec", function () {
     })
 })
 
-describe("decToFrac", function () {
+describe("toFraction", function () {
     it('should convert 0.5 to 1/2', function () {
         assert.equal(decToFrac("0.5"), "1/2");
     })
