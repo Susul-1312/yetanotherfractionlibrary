@@ -1,5 +1,6 @@
 # Yet Another Fraction Library
 ![Tests](https://github.com/Susul-1312/yetanotherfractionlibrary/actions/workflows/test.yml/badge.svg) [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 This is a library for dealing with fractions directly instead of decimal numbers.
 
 ## Features
