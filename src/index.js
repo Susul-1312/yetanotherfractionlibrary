@@ -75,6 +75,16 @@ function toFraction(x) {
 	return reduce(`${iPart.concat(fPart)}/${10 ** fPart.length}`)
 }
 
+// Compares two fractions, returning -1 if the first fraction is less than the second, 0 if they are equal, and 1 if the first fraction is greater than the second.
+function compare(a, b) {
+	const aParts = reduce(a).split("/")
+	const bParts = reduce(b).split("/")
+
+	if (aParts[0] * bParts[1] < bParts[0] * aParts[1]) return -1
+	if (aParts[0] * bParts[1] > bParts[0] * aParts[1]) return 1
+	return 0
+}	
+
 function gcd(a, b) {
 	a = Math.abs(a);
 	b = Math.abs(b);
@@ -97,4 +107,5 @@ export {
 	div,
 	toDecimal,
 	toFraction,
+	compare,
 }

@@ -1,6 +1,6 @@
 {
   "name": "yetanotherfractionlibrary",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Yet Another Fraction Library, stores fractions as actual integer division",
   "main": "index",
   "engines": {
