@@ -7,7 +7,7 @@ This is a library for dealing with fractions directly instead of decimal numbers
 - [x] Fractions are represented as a string containing numerator and denominator.
 - [x] Fractions can be simplified.
 - [x] Fractions can be added, subtracted, multiplied, and divided.
-- [ ] Fractions can be compared.
+- [x] Fractions can be compared.
 - [x] Fractions can be converted to decimal numbers.
 - [x] Decimal numbers can be converted to fractions.
 
@@ -20,82 +20,74 @@ npm install --production yetanotherfractionlibrary
 ```
 
 ## Usage
-Functions are represented as strings containing numerator and denominator.
+`FractionString`
+A string representing a fraction.
 ```js
-fraction = '1/2'
-fraction2 = '1/3'
+'1/2'
+'5/3'
+'3/1'
 ```
 
-To reduce a fraction, use the `reduce` function.
+`isFraction(<FractionString>) -> Boolean`
+Returns `true` if `<FractionString>` is a valid fraction.
 ```js
-const { reduce } = require('yetanotherfractionlibrary')
-
-fraction = '2/4'
-
-reduced = reduce(fraction)
-console.log(reduced) // 1/2
-
-// Whole numbers are reduced to x/1
-reduced = reduce('2')
-console.log(reduced) // 2/1
-```
-The fraction resulting from an operation is guaranteed to be reduced to its simplest form.
-
-To add two fractions, use the `add` function.
-```js
-const { add } = require('yetanotherfractionlibrary')
-
-fraction = '1/2'
-fraction2 = '1/3'
-
-added = add(fraction, fraction2)
-console.log(added) // 5/6
+isFraction('1/2') // true
+isFraction('1/0') // false
+isFraction('sdf/sdf') // false
 ```
 
-To subtract two fractions, use the `sub` function.
+`reduce(<FractionString | Number>) -> FractionString`
+Reduces a fraction to its simplest form.
 ```js
-const { sub } = require('yetanotherfractionlibrary')
-
-fraction = '3/4'
-fraction2 = '1/2'
-
-subtracted = sub(fraction, fraction2)
-console.log(subtracted) // 1/4
+reduce('2/4') // '1/2'
 ```
 
-To multiply two fractions, use the `mul` function.
+`add(<FractionString | Number>, <FractionString | Number>) -> FractionString`
+Adds two fractions.
 ```js
-const { mul } = require('yetanotherfractionlibrary')
-
-fraction = '1/2'
-fraction2 = '1/2'
-
-multiplied = mul(fraction, fraction2)
-console.log(multiplied) // 1/4
+add('1/2', '1/4') // '3/4'
 ```
 
-To divide two fractions, use the `div` function.
+`sub(<FractionString | Number>, <FractionString | Number>) -> FractionString`
+Subtracts two fractions.
 ```js
-const { div } = require('yetanotherfractionlibrary')
-
-fraction = '1/2'
-fraction2 = '1/2'
-
-divided = div(fraction, fraction2)
-console.log(divided) // 1/1
+sub('5/6', '1/2') // '2/6'
 ```
 
-Fractions can be converted to decimal and vice versa.
+`mul(<FractionString | Number>, <FractionString | Number>) -> FractionString`
+Multiplies two fractions.
 ```js
-const { toDecimal, toFraction } = require('yetanotherfractionlibrary')
+mul('1/2', '1/4') // '1/8'
+```
 
-fraction = '1/2'
+`div(<FractionString | Number>, <FractionString | Number>) -> FractionString`
+Divides two fractions.
+```js
+div('1/2', '1/4') // '2'
+```
 
-decimal = toDecimal(fraction)
-console.log(decimal) // 0.5
+`inv(<FractionString | Number>) -> FractionString`
+Inverts a fraction.
+```js
+inv('1/2') // '2/1'
+```
 
-decimal = "0.6"
-fraction = toFraction(decimal)
+`compare(<FractionString | Number>, <FractionString | Number>) -> Number`
+Compares two fractions, returning -1 if the first fraction is less than the second, 0 if they are equal, and 1 if the first fraction is greater than the second.
+```js
+compare('1/2', '3/4') // -1
+compare('1/2', '1/2') // 0
+compare('1/2', '1/4') // 1
+```
 
-console.log(fraction) // 3/5
+`toDecimal(<FractionString>) -> Number`
+Converts a fraction to a decimal number.
+```js
+toDecimal('1/2') // 0.5
+```
+
+`toFraction(<Number>) -> FractionString`
+Converts a decimal number to a fraction.
+```js
+toFraction(0.5) // '1/2'
 ```
