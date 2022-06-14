@@ -59,6 +59,16 @@ function div(a, b) {
 	return mul(a, inv(b))
 }
 
+function pow(a, b) {
+	const aParts = reduce(a).split("/")
+
+	if (b != Math.floor(b)) throw new TypeError(`Please only use whole numbers for the exponent.`)
+	if (b == 0) return "1/1"
+	if (b < 0) return inv(pow(a, -b))
+
+	return reduce(`${aParts[0] ** b}/${aParts[1] ** b}`)
+}
+
 function toDecimal(frac) {
 	const parts = reduce(frac).split("/")
 
@@ -83,7 +93,7 @@ function compare(a, b) {
 	if (aParts[0] * bParts[1] < bParts[0] * aParts[1]) return -1
 	if (aParts[0] * bParts[1] > bParts[0] * aParts[1]) return 1
 	return 0
-}	
+}
 
 function gcd(a, b) {
 	a = Math.abs(a);
@@ -105,6 +115,7 @@ export {
 	sub,
 	mul,
 	div,
+	pow,
 	toDecimal,
 	toFraction,
 	compare,

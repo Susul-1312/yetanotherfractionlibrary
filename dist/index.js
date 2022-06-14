@@ -68,6 +68,16 @@ function div(a, b) {
 	return mul(a, inv(b));
 }
 
+function pow(a, b) {
+	var aParts = reduce(a).split("/");
+
+	if (b != Math.floor(b)) throw new TypeError("Please only use whole numbers for the exponent.");
+	if (b == 0) return "1/1";
+	if (b < 0) return inv(pow(a, -b));
+
+	return reduce(aParts[0] ** b + "/" + aParts[1] ** b);
+}
+
 function toDecimal(frac) {
 	var parts = reduce(frac).split("/");
 
@@ -118,6 +128,7 @@ exports.add = add;
 exports.sub = sub;
 exports.mul = mul;
 exports.div = div;
+exports.pow = pow;
 exports.toDecimal = toDecimal;
 exports.toFraction = toFraction;
 exports.compare = compare;

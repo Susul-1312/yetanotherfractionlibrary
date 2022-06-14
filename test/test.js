@@ -1,5 +1,5 @@
 const assert = require('assert')
-const { reduce, add, sub, mul, div, toDecimal, toFraction, compare } = require('..')
+const { reduce, add, sub, mul, div, pow, toDecimal, toFraction, compare } = require('..')
 
 describe("reduce", function () {
     it('should reduce 3/6 to 1/2', function () {
@@ -115,5 +115,20 @@ describe("compare", function () {
     })
     it('should compare -5/6 to -1/1 to be 1', function () {
         assert.equal(compare("-5/6", "-1/1"), 1);
+    })
+})
+
+describe("pow", function () {
+    it('should raise 1/2 to the power of 2 to get 1/4', function () {
+        assert.equal(pow("1/2", 2), "1/4");
+    })
+    it('should raise 1/2 to the power of 3 to get 1/8', function () {
+        assert.equal(pow("1/2", 3), "1/8");
+    })
+    it('should raise 2/3 to the power of 2 to get 4/9', function () {
+        assert.equal(pow("2/3", 2), "4/9");
+    })
+    it('should raise -2/3 to the power of 2 to get 4/9', function () {
+        assert.equal(pow("-2/3", 2), "4/9");
     })
 })

@@ -73,6 +73,13 @@ Divides two fractions.
 div('1/2', '1/4') // '2'
 ```
 
+`pow(<FractionString | Number>, <Number>) -> FractionString`
+
+Raises a fraction to a power.
+```js
+pow('1/2', 2) // '1/4'
+```
+
 `inv(<FractionString | Number>) -> FractionString`
 
 Inverts a fraction.
