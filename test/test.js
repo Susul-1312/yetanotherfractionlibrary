@@ -131,4 +131,7 @@ describe("pow", function () {
     it('should raise -2/3 to the power of 2 to get 4/9', function () {
         assert.equal(pow("-2/3", 2), "4/9");
     })
+    it('should raise 2/3 to the power of -2 to get 9/4', function () {
+        assert.equal(pow("2/3", -2), "9/4");
+    })
 })
