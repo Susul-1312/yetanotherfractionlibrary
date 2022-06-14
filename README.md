@@ -6,10 +6,13 @@ This is a library for dealing with fractions directly instead of decimal numbers
 ## Features
 - [x] Fractions are represented as a string containing numerator and denominator.
 - [x] Fractions can be simplified.
+- [x] Fractions can be inverted.
 - [x] Fractions can be added, subtracted, multiplied, and divided.
+- [x] Fractions can be raised to an integer power.
 - [x] Fractions can be compared.
 - [x] Fractions can be converted to decimal numbers.
 - [x] Decimal numbers can be converted to fractions.
+- [ ] Fractions can be raised to a fractional power.
 
 ## Installation
 yafl has no production dependencies.
