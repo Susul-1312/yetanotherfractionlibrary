@@ -3,7 +3,7 @@ function FracError(value) {
 }
 
 function isFraction(frac) {
-	if (isFinite(frac)) return true;
+	if (isFinite(frac) && frac == parseInt(frac)) return true;
 	if (typeof frac != "string") return false;
 	const parts = frac.split("/");
 	if (parts.length != 2) return false;

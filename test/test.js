@@ -1,5 +1,35 @@
 const assert = require('assert')
-const { reduce, add, sub, mul, div, pow, toDecimal, toFraction, compare } = require('..')
+const { isFraction, reduce, add, sub, mul, div, pow, toDecimal, toFraction, compare } = require('..')
+
+describe('isFraction', () => {
+    it('should return true for fractions', () => {
+        assert.equal(isFraction('1/2'), true)
+        assert.equal(isFraction('1/3'), true)
+        assert.equal(isFraction('-1/4'), true)
+    })
+    it('should return true for integers', () => {
+        assert.equal(isFraction('3'), true)
+        assert.equal(isFraction('4'), true)
+        assert.equal(isFraction('0'), true)
+        assert.equal(isFraction('-3'), true)
+    })
+    it('should return false for invalid number of denominators', () => {
+        assert.equal(isFraction('1/2/3'), false)
+        assert.equal(isFraction('1/2/3/4'), false)
+    })
+
+    it('should return false for fractions containing not numbers', () => {
+        assert.equal(isFraction('a'), false)
+        assert.equal(isFraction('1/a'), false)
+        assert.equal(isFraction('a/3'), false)
+        assert.equal(isFraction('1/a/3'), false)
+    })
+
+    it('should return false for fractions containing decimals', () => {
+        assert.equal(isFraction('0.3'), false)
+        assert.equal(isFraction('0.3/0.4'), false)
+    })
+})
 
 describe("reduce", function () {
     it('should reduce 3/6 to 1/2', function () {
